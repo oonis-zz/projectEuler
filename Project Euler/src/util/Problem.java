@@ -9,5 +9,5 @@ public interface Problem {
     
     public String getTitle();
     
-    public Object getAnswer();
+    public String run();
 }

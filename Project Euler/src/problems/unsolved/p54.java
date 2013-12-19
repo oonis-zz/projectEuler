@@ -47,6 +47,17 @@ public class p54 {
         
     }
     
+    // This will do the actual checking of the score for the players hand
+    private static int getScore( Card[] hand ){
+        
+        int suitForFlush = hand[0].suit; // If it's a flush then they will all have the same suit
+        for( Card card : hand ){ // Iterate through each chard in the hand
+            // Do something here
+        }
+        
+        return 0;
+    }
+    
     private static int getHighestStraight( int[] ranks ){
         outer:
         for( int i = ranks.length-1; i >= 3; i-- ){

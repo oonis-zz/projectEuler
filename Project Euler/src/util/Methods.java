@@ -52,4 +52,12 @@ public class Methods {
         
     }
     
+    public static String reverseString( String s ){
+        return new StringBuilder(s).reverse().toString();
+    }
+    
+    public static boolean isPalindrome( String num ){
+        return num.equals( reverseString(num) );
+    }
+    
 }
