@@ -16,7 +16,7 @@ public class Driver {
     public static void main(String[] args) {
         Problem p = new p55();
         System.out.println( "Problem " + p.getID() + " : " +
-                p.getTitle() + "\n" );
+                p.getTitle() );
         System.out.println( "Solution:: " + p.run() );
     }
 }

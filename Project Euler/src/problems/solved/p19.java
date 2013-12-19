@@ -1,26 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package problems.solved;
+
+import util.Problem;
 
 /**
  *
  * @author Sam
  */
-public class p19 {
+public class p19 implements Problem{
     public static void main(String[] args) {
+        System.out.println( "Solution::" + new p19().run() );
+    }
+    
+    @Override
+    public String run(){
         int iter = 0;
         long total = 0;
         while(iter < 100000) {
             total = month_range(0,1901,2000);
             iter++;
         }
-        System.out.println("Solution:: " + total);
-        
+        return String.valueOf( total );
     }
+    
+    @Override
+    public int getID(){
+        return 19;
+    }
+    
+    @Override        
+    public String getTitle(){
+        return "Counting Sundays";
+    }
+    
     
     public static long month_range( int day, int year_start, int year_end ){
         long total = 0;

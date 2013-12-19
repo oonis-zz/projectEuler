@@ -46,7 +46,7 @@ public class p55 implements Problem{
     
     @Override
     public int getID(){
-        return 055;
+        return 55;
     }
     
     public String getTitle(){
