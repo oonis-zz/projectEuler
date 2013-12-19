@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package problems.solved;
 
 import java.math.BigInteger;
@@ -16,7 +10,7 @@ import util.Problem;
  */
 public class p55 implements Problem{
     public static void main(String[] args) {
-        System.out.println( "Solution::" + new p55().run() );
+        System.out.println( "Solution:: " + new p55().run() );
     }
     
     @Override
