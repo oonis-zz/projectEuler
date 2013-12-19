@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package problems;
+package problems.unsolved;
 
 /**
  *
@@ -46,4 +46,18 @@ public class p54 {
     public static void main(String[] args) {
         
     }
+    
+    private static int getHighestStraight( int[] ranks ){
+        outer:
+        for( int i = ranks.length-1; i >= 3; i-- ){
+            for( int j = 0; j < 5; j++ )
+                if( ranks[i - j + 13 % 13] == 0 )
+                    continue outer;
+            return i;
+        } 
+        
+        return -1;
+        
+    }
+    
 }

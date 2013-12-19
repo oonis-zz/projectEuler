@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package problems;
+package problems.solved;
 
 import java.math.BigInteger;
 

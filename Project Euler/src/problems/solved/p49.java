@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package problems;
+package problems.solved;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import util.Methods;
 
 /**
  *

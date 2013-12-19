@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package problems;
+package util;
 
 import java.util.ArrayList;
 
