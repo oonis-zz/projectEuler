@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class p22 {
     public static void main(String[] args) throws IOException {
-        String[] a = Import( "C:\\Users\\Sam\\Desktop\\names.txt" );
+        String[] a = Import( "C:\\Users\\Sam\\Desktop\\names.txt" ); // hm...
         long b = 0;
         
         for( int i = 0; i < a.length; i++ )

@@ -1,12 +1,29 @@
 package problems.solved;
 
+import util.Problem;
+
 /**
  *
  * @author Sam
  */
-public class p21 {
+public class p21 implements Problem{
     public static void main(String[] args) {
-        System.out.println( "Solution:: " + sum_amicable_pairs(1,10000) );
+        System.out.println( "Solution::" + new p21().run() );
+    }
+    
+    @Override
+    public String run(){
+        return String.valueOf( sum_amicable_pairs(1,10000) );
+    }
+    
+    @Override
+    public int getID(){
+        return 21;
+    }
+    
+    @Override
+    public String getTitle(){
+        return "Amicable numbers";
     }
     
     public static int sum_amicable_pairs( int low, int high ){

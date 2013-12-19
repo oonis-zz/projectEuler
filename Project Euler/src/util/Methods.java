@@ -1,6 +1,7 @@
 package util;
 
 import java.util.ArrayList;
+import java.math.BigInteger;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Methods {
     }
     
     public static ArrayList listPrimes( int n ){
-        ArrayList<Integer> primes = new ArrayList<Integer>();
+        ArrayList<Integer> primes = new ArrayList<>();
         primes.add(2); primes.add(3);
         
         int counter = 4;
@@ -52,6 +53,16 @@ public class Methods {
     
     public static boolean isPalindrome( String num ){
         return num.equals( reverseString(num) );
+    }
+    
+    // Maybe generalize this away from BigInteger if needed later
+    public static int sumDigits( BigInteger n ){
+        int sum = 0;
+        String s = n.toString();
+        for( int i = 0; i < s.length(); i++ ){
+            sum += ( s.charAt(i)-'0' );
+        }
+        return sum;
     }
     
 }
