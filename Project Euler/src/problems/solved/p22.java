@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +29,7 @@ public class p22 {
         String s = "ERROR";
         try {
              a = new BufferedReader(new FileReader(path));
+            //a = new BufferedReader( InputStreamReader( p22.class.getResourceAsStream("/input_files/names.txt") ) );
              s = a.readLine();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(p22.class.getName()).log(Level.SEVERE, null, ex);
