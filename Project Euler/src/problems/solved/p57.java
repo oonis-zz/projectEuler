@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package problems.unsolved;
+package problems.solved;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -21,24 +21,27 @@ public class p57 implements Problem{
     @Override
     public String run(){
         //int numerator = 0;
-        BigDecimal numerator;
+        BigInteger numerator = new BigInteger("3");
         //int denominator = 1;
         int count = 0;
-        BigInteger A0 = BigInteger.ZERO;
-        BigInteger An = BigInteger.ONE; // Starting with n = 1
-        BigDecimal firstPart = BigDecimal.valueOf(1-Math.sqrt(2));
-        BigDecimal secondPart = BigDecimal.valueOf( 1+Math.sqrt(2) );
-        BigInteger denominator;
+        //BigInteger A0 = BigInteger.ZERO;
+        //BigInteger An = BigInteger.ONE; // Starting with n = 1
+        //BigDecimal firstPart = BigDecimal.valueOf(1-Math.sqrt(2));
+        //BigDecimal secondPart = BigDecimal.valueOf( 1+Math.sqrt(2) );
+        BigInteger denominator = new BigInteger("2");
         
-        for( int n = 2; n <= 1000; n++ ){ // start with n = 2
-            numerator = ( firstPart.pow(n).add(secondPart.pow(n)) ).divide(new BigDecimal("2"),RoundingMode.HALF_UP) ;
+        for( int n = 1; n <= 1000; n++ ){ // start with n = 2
+            //numerator = ( firstPart.pow(n).add(secondPart.pow(n)) ).divide(new BigDecimal("2"),RoundingMode.HALF_UP) ;
             //denominator = A0 + (2*An); // A_(n-2) + 2*A_(n-1)
-            denominator = A0.add( An.multiply(BigInteger.valueOf(2)) );
-            A0 = An;
-            An = denominator;
+            //denominator = A0.add( An.multiply(BigInteger.valueOf(2)) );
+            numerator = numerator.add( denominator.multiply( new BigInteger("2") ) );
+            denominator = numerator.subtract( denominator );
             
-            //if( numerator.toString(). > denominator.toString().length() )
-                //count++;
+            //A0 = An;
+            //An = denominator;
+            
+            if( numerator.toString().length() > denominator.toString().length() )
+                count++;
             
             
             System.out.println( "Numerator: " + numerator );
