@@ -43,13 +43,24 @@ public class p54 {
         
     }
     
+    public String run(){
+        
+        return "";
+    }
+    
     // This will do the actual checking of the score for the players hand
     private static int getScore( Card[] hand ){
         
+        int isFlush = 1; // Start with the assumption that we have a flush
+        int[] numRanks = new int[13]; // This will tell us how many of each rank we have
         int suitForFlush = hand[0].suit; // If it's a flush then they will all have the same suit
         for( Card card : hand ){ // Iterate through each chard in the hand
-            // Do something here
+            numRanks[card.rank]++; // Mark that we have this card
+            if( card.suit != suitForFlush )
+                isFlush = 0; // We no longer have a flush option
         }
+        
+        
         
         return 0;
     }
