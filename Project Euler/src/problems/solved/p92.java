@@ -1,5 +1,5 @@
 
-package problems.unsolved;
+package problems.solved;
 import util.Problem;
 
 /**
