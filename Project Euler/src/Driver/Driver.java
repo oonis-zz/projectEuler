@@ -20,10 +20,19 @@ public class Driver {
             System.out.println( "Enter a problem to run::" );
             int pNum = userInput.nextInt();
             
-            Class<Problem> p =(Class<Problem>) Class.forName( "problems.solved.p"+pNum );
+            String className = String.format("problems.solved.p%d", pNum);
+            Class<Problem> clazz = (Class<Problem>) Class.forName(className);
+            Problem problem = clazz.newInstance();
+            System.out.println("Solution:: "+problem.run());
+            //problem.run();
             
             
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) { // Problem not found under solved
+            //Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Problem not completed yet");
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
         
