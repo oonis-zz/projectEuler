@@ -1,13 +1,29 @@
 package problems.solved;
 
 import java.util.ArrayList;
+import util.Problem;
 
 /**
  *
  * @author Sam
  */
-public class p29 {
-    public static void main(String[] args) {
+public class p29 implements Problem{
+    public static void main(String[] args) {        
+        System.out.println( "Solution::" + new p29().run() );
+    }
+    
+    @Override
+    public String getTitle(){
+        return "Distinct powers";
+    }
+    
+    @Override
+    public int getID(){
+        return 29;
+    }
+    
+    @Override
+    public String run(){
         ArrayList set = new ArrayList();
         
         for( int a = 2; a <= 100; a++ ){
@@ -18,7 +34,8 @@ public class p29 {
             }
         }
         
-        System.out.println( "Solution:: " + set.size() );
-                
+        return String.valueOf( set.size() );
+        
     }
+    
 }

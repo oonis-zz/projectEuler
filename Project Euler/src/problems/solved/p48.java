@@ -1,4 +1,5 @@
 package problems.solved;
+import util.Problem;
 
 import java.math.BigInteger;
 
@@ -6,13 +7,23 @@ import java.math.BigInteger;
  *
  * @author Sam
  */
-public class p48 {
+public class p48 implements Problem{
     public static void main(String[] args) {
-        new p48().runTest();
-        
+        System.out.println( "Solution::" + new p48().run() );
     }
     
-    private void runTest(){
+    @Override
+    public String getTitle(){
+        return "Self powers";
+    }
+    
+    @Override
+    public int getID(){
+        return 48;
+    }
+    
+    @Override
+    public String run(){
         
         
         BigInteger result = BigInteger.ZERO;
@@ -21,7 +32,7 @@ public class p48 {
             result = result.add( i.pow( i.intValue() ) );
         }
         
-        System.out.println("Solution:: " + result.toString()); // Just cut the last 10 from the output 
+        return result.toString(); // Just cut the last 10 from the output 
     }
     
 }
