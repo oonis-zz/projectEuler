@@ -1,10 +1,10 @@
 package problems.solved;
+import util.Problem;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,15 +13,37 @@ import java.util.logging.Logger;
  *
  * @author Sam
  */
-public class p22 {
-    public static void main(String[] args) throws IOException {
-        String[] a = Import( "C:\\Users\\Sam\\Desktop\\names.txt" ); // hm...
+public class p22 implements Problem{
+    public static void main(String[] args){
+        
+        System.out.println( "Solution::" + new p22().run() );
+    }
+    
+    @Override
+    public String getTitle(){
+        return "Names scores";
+    }
+    
+    @Override
+    public int getID(){
+        return 22;
+    }
+    
+    @Override
+    public String run(){
         long b = 0;
+        try {
+            String[] a = Import( "C:\\Users\\Sam\\Desktop\\names.txt" ); // hm...
+            
+            for( int i = 0; i < a.length; i++ )
+                b += tally( a[i] ) * ( i + 1 );
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(p22.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        for( int i = 0; i < a.length; i++ )
-            b += tally( a[i] ) * ( i + 1 );
-        
-        System.out.println( "Solution:: " + b );
+        return String.valueOf(b);
     }
     
     public static String[] Import( String path ) throws IOException{
