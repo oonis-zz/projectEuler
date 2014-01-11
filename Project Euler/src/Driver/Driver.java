@@ -16,8 +16,7 @@ public class Driver {
     public static void main(String[] args) {
         try {
             Scanner userInput = new Scanner( System.in );
-            Class<?> c = Class.forName( "problems.solved.p19" );
-            System.out.println( "Enter a problem to run::" );
+            System.out.print( "Enter a problem to run:: " );
             int pNum = userInput.nextInt();
             
             String className = String.format("problems.solved.p%d", pNum);
@@ -29,7 +28,7 @@ public class Driver {
             
         } catch (ClassNotFoundException ex) { // Problem not found under solved
             //Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Problem not completed yet");
+            System.out.println("Problem not yet completed");
         } catch (InstantiationException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
