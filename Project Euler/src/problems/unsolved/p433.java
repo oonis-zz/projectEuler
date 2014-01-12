@@ -37,18 +37,30 @@ public class p433 implements Problem{
     }
     
     private BigInteger E( BigInteger i, BigInteger j ){
-        BigInteger ret = GCD( i,j,BigInteger.ONE );
+        BigInteger ret = GCD( i,j );
         return ret;
     }
     
-    private BigInteger GCD( BigInteger i,BigInteger j,BigInteger n ){
-        BigInteger i1 = j;
-        BigInteger j1 = i.mod(j);
-        if( j1.compareTo( BigInteger.ZERO ) == 0 ){
+    private BigInteger GCD( BigInteger i,BigInteger j ){
+        //BigInteger i1 = j;
+        //BigInteger j1;
+        BigInteger steps = BigInteger.ZERO;
+        BigInteger i0 = BigInteger.ZERO;
+        
+        while( j.compareTo( BigInteger.ZERO ) != 0 ){
+            i0 = i;
+            i = j;
+            j = i0.mod( j );
+            
+            steps = steps.add( BigInteger.ONE );
+        }
+        
+        /*if( j1.compareTo( BigInteger.ZERO ) == 0 ){
             return n;
         }else{
             return GCD( i1,j1,n.add(BigInteger.ONE) );
-        }
+        }*/
+        return steps;
     }
     
 }
