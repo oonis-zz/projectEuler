@@ -2,6 +2,7 @@ package util;
 
 import java.util.ArrayList;
 import java.math.BigInteger;
+import java.util.Arrays;
 
 /**
  *
@@ -64,5 +65,17 @@ public class Methods {
         }
         return sum;
     }
+    
+    public static boolean sameDigits( int x, int y ){
+        char[] xDigits = Integer.toString( x ).toCharArray();
+        char[] yDigits = Integer.toString( y ).toCharArray();
+        
+        // Sort the char array
+        Arrays.sort( xDigits );
+        Arrays.sort( yDigits );
+        
+        return Arrays.equals( xDigits, yDigits );
+    }
+    
     
 }
