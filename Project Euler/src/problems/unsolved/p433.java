@@ -26,7 +26,8 @@ public class p433 implements Problem{
     @Override
     public String run(){
         BigInteger count = BigInteger.ZERO;
-        BigInteger LIMIT = new BigInteger("5000000");
+        BigInteger LIMIT = new BigInteger("10");
+        
         for( BigInteger i = BigInteger.ONE; i.compareTo(LIMIT) <= 0; i = i.add(BigInteger.ONE) ){
             //for( BigInteger j = BigInteger.ONE; j.compareTo(new BigInteger("5000000")) <= 0; j = j.add(BigInteger.ONE) ){
             for( BigInteger j = BigInteger.ONE; j.compareTo(LIMIT) <= 0; j = j.add(BigInteger.ONE) ){
@@ -61,7 +62,7 @@ public class p433 implements Problem{
         return steps;
     }
     
-    public static final BigInteger sqrt(BigInteger n) {
+    /*public static final BigInteger sqrt(BigInteger n) {
         BigInteger a = BigInteger.ONE;
         BigInteger b = new BigInteger(n.shiftRight(5).add(new BigInteger("8")).toString());
         while(b.compareTo(a) >= 0) {
@@ -70,6 +71,6 @@ public class p433 implements Problem{
             else a = mid.add(BigInteger.ONE);
         }
         return a.subtract(BigInteger.ONE);
-    }
+    }*/
     
 }
