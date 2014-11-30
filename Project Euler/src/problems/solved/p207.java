@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package problems.unsolved;
+package problems.solved;
 
 import util.Problem;
 
@@ -30,10 +30,16 @@ public class p207 implements Problem{
 
     @Override
     public String run() {
+        long perfect = 1; // Partitions where t is also an integer
+        long total = 2;
+        while (total <= 12345 * perfect) {
+            if (((total & (++total)) == 0)) {
+                perfect++;
+            }
+        }
+        long finalAnswer = (total * (total + 1));
         
-        
-        
-        return "";
+        return String.valueOf(finalAnswer);
     }
 
 }
