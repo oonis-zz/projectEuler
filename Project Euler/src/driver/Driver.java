@@ -1,9 +1,5 @@
-package Driver;
-import javax.script.ScriptEngineManager;
+package driver;
 import util.Problem;
-import problems.solved.*;
-
-import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Scanner;
@@ -27,11 +23,8 @@ public class Driver {
             
             
         } catch (ClassNotFoundException ex) { // Problem not found under solved
-            //Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Problem not yet completed");
-        } catch (InstantiationException ex) {
-            Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
         
